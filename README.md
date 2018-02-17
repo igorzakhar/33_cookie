@@ -8,14 +8,23 @@ Example of frontend launch on Linux, Python 3.5:
 
 ```bash
 cd static/
-python3 -m http.server
+python3 -m http.server 9000
 ```
 
-Open page [127.0.0.1:8000](http://127.0.0.1:8000) in browser.
+Open page [localhost:9000](localhost:9000) in browser.
 
 # Deploy on production server
 
-[TODO. Deploy scripts will written later]
+If you make a request to app, you will notice a header being returned:  
+
+
+_**Access-Control-Allowed-Origins:** Custom header with list of allowed origins: http://33_cookie.devman.org https://33_cookie.dev_  
+
+The Access-Control-Allow-Origin header determines which origins are allowed to access server resources over [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS).  
+
+App has to be deployed one of the following domains:  
+- http://33_cookie.devman.org
+- https://33_cookie.dev
 
 # Project Goals
 
